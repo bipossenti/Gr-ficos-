@@ -11,12 +11,15 @@ async function quantidadeUsuariosPorRede() {
         {
             x: nomeDasRedes, 
             y: quantidadeDeUsuarios, 
-            type: 'bar',
-            marker: {
-                color: getCSS('--primary-color')
-            }
+            type: 'bar'
         }
     ]
+
+    const grafico = document.createElement('div')
+    grafico.className = 'grafico'
+    document.getElementById('graficos-container').appendChild(grafico)
+    Plotly.newPlot(grafico, data)
+}
 
     const laytout = {
         plot_bgcolor: getCSS('--bg-color'),
